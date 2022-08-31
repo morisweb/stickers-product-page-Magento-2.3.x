@@ -1,0 +1,12 @@
+<?xml: version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_
+configuration.xsd">
+<head>
+        <css src="Webdev_Stickers::css/webdev-stickers.css" />
+</head>
+<body>
+<referenceContainer name="content">
+<block name="product.sticker" class="Webdev\Stickers\Block\Sticker" template="Webdev_Stickers::productSticker.phtml" cacheable="false" after="-"/>
+</referenceContainer>
+</body>
+</page>

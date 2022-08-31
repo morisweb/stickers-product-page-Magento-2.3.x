@@ -1,0 +1,16 @@
+<?php
+if($block->isStickerActive()):
+    $productStickerBlock = $block->$setStickerHTML();
+    ?>
+    <script type="text/x-magento-init">
+        "*":{
+            "productPageSticker":{
+        "imageTag": {
+            "imagePath":"<?php /* @escapeNotVerified" */ echo $productStickerBlock; ?>"
+                    }
+        }}
+    }
+}
+</script>
+<?php 
+endif;

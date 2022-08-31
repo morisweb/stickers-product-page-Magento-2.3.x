@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+      <stickers>
+      <stickers_page>
+      <activation>1</activation>
+      <calculation>manual</calculation>
+      <type>custom</type>
+      <first_label>New</first_label>
+      <second_label>Product</second_label>
+      <background_color>FF0000</background_color>
+      <text_color>FFFFF</text_color>
+      <position>right</position>
+      </stickers_page>
+      </stickers>
+      </default>
+</config>

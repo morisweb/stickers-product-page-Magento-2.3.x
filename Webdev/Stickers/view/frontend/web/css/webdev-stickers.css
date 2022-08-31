@@ -1,0 +1,82 @@
+.product.media{
+    position: :relative;
+}
+.webdev-sticker-wrapper{
+    position: absolute;
+    z-index: 1;
+    transition: all 150ms ease-in-out;
+    -moz-transition: all 150ms ease-in-out;
+    -webkit-transition: all 150ms ease-in-out;
+    -o-transition: all 150ms ease-in-out;
+    font-family: 'Oswald','sans-serif';
+    text-transform: uppercase;
+}
+.webdev-sticker {
+    font-size: 16px;
+    line-height: 1em;
+    display: table-cell !important;
+    vertical-align: middle !important;
+    transition: all 150ms ease-in-out;
+    -moz-transition: all 150ms ease-in-out;
+    -webkit-transition: all 150ms ease-in-out;
+    -o-transition: all 150ms ease-in-out;
+}
+.webdev-sticker-wrapper.right{
+    top:3px;
+    right:3px;
+}
+.webdev-sticker-wrapper.left {
+    top:3px;
+    left:3px;
+}
+.webdev-sticker.discount-product{
+    width: 66px;
+    border: #fff 2px solid;
+    border-radius: 50%;
+    box-shadow: 2px 2px 2px #ccc;
+    text-align: center;
+    height: 60px;
+    padding: 10px 5px;
+}
+.product.media .webdev-sticker.discount-product{
+    width: 80px;
+    height: 74px;
+}
+.product.media .webdev-sticker-wrapper.top-right{
+    top:13px;
+    right: 13px;
+}
+.webdev-sticker.discount-product.automatic{
+    font-size: 25px;
+}
+.img.categoryDiscountImage{
+    width: 60px;
+}
+.img.productDiscountImage{
+    width: 100px;
+}
+
+/*** MediaQuery per le varie risoluzioni ***/
+@media screen and (max-width:768px){
+.webdev-sticker{
+    font-size 12px;
+}
+.webdev-sticker.discount-product{
+width: 50px;
+height: 38px;
+padding: 12px 5px;
+}
+.product.media .webdev-sticker-wrapper.right {
+    top:10px
+    right:10px;
+}
+.product.media .webdev-sticker-wrapper.left{
+    top:10px;
+    left:10px;
+}
+.product.media .webdev-sticker.discount-product {
+    width: 70px;
+    height: 58px;
+    line-height: 16px;
+}
+}

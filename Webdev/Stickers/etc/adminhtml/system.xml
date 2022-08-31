@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="webdev" translate="label" sortOrder="400">
+            <label>WebDev</label>
+        </tab>
+        <section id="stickers" translate="label" type="text" sortOrder="200" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Stickers</label>
+            <tab>webdev</tab>
+            <resource>Webdev_Stickers::config_stickers</resource>
+            <group id="stickers_page" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Stickers page settings</label>
+                <field id="activation" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Activation</label>
+                <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="calculation" translate="label comment" type="select" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Calculation</label>
+                <source_model>Webdev\Stickers\Model\Config\Backend\CalculationType</source_model>
+                <comment>
+                <![CDATA[<br />
+                <strong>Manual</strong>: it will be show loaded image or configurated label <br />
+                <strong>Automatic</strong>it will be show calculated by the system, it is possible to select only stickers background colo an text color.
+                ]]>
+                </comment>
+                </field>
+                <field id="category" translate="label" type="multiselect" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Product Category</label>
+                <source_model>Webdev\Stickers\Model\Config\Backend\Categorylist</source_model>
+                <depends>
+                    <field id="stickers/stickers_page/calculation">manual</field>
+                </depends>
+                </field>
+                <field id="type" translate="label" type="select" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Type</label>
+                <source_model>Webdev\Stickers\Model\Config\Backend\StickerType</source_model>
+                <depends>
+                    <field id="stickers/stickers_page/calculation">manual</field>
+                </depends>
+                </field>
+                <field id="image" translate="label comment" type="image" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Image</label>
+                <comment><![CDATA[Allowed files type:jpg,jpeg,gif,png]]></comment>
+                <backend_model>Webdev\Stickers\Model\Config\Backend\Image</backend_model>
+                <base_url type="media" scope_info="1">webdev/stickers/images</base_url>
+                <depends>
+                    <field id="stickers/stickers_page/calculation">manual</field>
+                    <field id="stickers/stickers_page/type">image</field>
+                </depends>
+                </field>
+                <field id="first_label" translate="label comment" type="text" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Label, firts row</label>
+                <comment><![CDATA[first row of the label to show in discount stickers (max 6 chars)]]></comment>
+                <depends>
+                    <field id="stickers/stickers_page/calculation">manual</field>
+                    <field id="stickers/stickers_page/type">image</field>
+                </depends>
+                </field>
+                <field id="second_label" translate="label comment" type="text" sortOrder="7" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Label, second row</label>
+                <comment><![CDATA[second row of the label to show in discount stickers (max 6 chars)]]></comment>
+                <depends>
+                    <field id="stickers/stickers_page/calculation">manual</field>
+                    <field id="stickers/stickers_page/type">custom</field>
+                </depends>
+                </field>
+                <field id="background_color" translate="label comment" type="text" sortOrder="8" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Background Color</label>
+                <comment><![CDATA[Sticker background color (exadecimal value, withou #: ex. FFFF]]></comment>
+                <depends>
+                    <field id="stickers/stickers_page/type">custom</field>
+                </depends>
+                </field>
+                <field id="text_color" translate="label comment" type="text" sortOrder="9" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Text Color</label>
+                <comment><![CDATA[Sticker text color(exadecimal value, without #: ex. FFFFF]]></comment>
+                <depends>
+                    <field id="stickers/stickers_page/type">custom</field>
+                </depends>
+                </field>
+                <field id="position" translate="label comment" type="radios" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Position</label>
+                <source_model>Webdev\Stickers\Model\Config\Backend\Position</source_model>
+                <comment><![CDATA[Where the stickers should appear:Right or Left]]></comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
